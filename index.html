@@ -1,10 +1,11 @@
 <!DOCTYPE html>
 <html lang="th">
 <head>
+
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Luxury Portfolio</title>
+<title>Promporn Sawangsri | Luxury Identity</title>
 
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
 
@@ -18,259 +19,302 @@
 }
 
 body{
-    background:#000;
+
+    background:#050505;
     color:white;
     overflow-x:hidden;
+
 }
 
-/* Animated Background */
+/* ANIMATED BACKGROUND */
 
-.bg-animation{
+.bg{
+
     position:fixed;
     width:100%;
     height:100%;
     overflow:hidden;
-    z-index:-1;
+    z-index:-2;
+
 }
 
-.bg-animation span{
+.bg span{
+
     position:absolute;
-    display:block;
-    width:20px;
-    height:20px;
-    background:rgba(255,255,255,0.08);
-    animation:animate 20s linear infinite;
-    bottom:-150px;
-    border-radius:50%;
-}
-
-.bg-animation span:nth-child(1){
-    left:10%;
-    width:80px;
-    height:80px;
-    animation-duration:15s;
-}
-
-.bg-animation span:nth-child(2){
-    left:25%;
-    width:30px;
-    height:30px;
-    animation-duration:10s;
-}
-
-.bg-animation span:nth-child(3){
-    left:40%;
-    width:100px;
-    height:100px;
-    animation-duration:18s;
-}
-
-.bg-animation span:nth-child(4){
-    left:70%;
-    width:50px;
-    height:50px;
-    animation-duration:12s;
-}
-
-.bg-animation span:nth-child(5){
-    left:85%;
-    width:120px;
+    width:2px;
     height:120px;
-    animation-duration:22s;
-}
 
-@keyframes animate{
+    background:linear-gradient(transparent,#ff00cc,transparent);
 
-    0%{
-        transform:translateY(0) rotate(0deg);
-        opacity:0;
-    }
+    animation:rain 8s linear infinite;
 
-    100%{
-        transform:translateY(-1200px) rotate(720deg);
-        opacity:1;
-    }
+    opacity:0.5;
 
 }
 
-/* Hero */
+@keyframes rain{
+
+    from{
+        transform:translateY(-100vh);
+    }
+
+    to{
+        transform:translateY(100vh);
+    }
+
+}
+
+/* MAIN */
+
+.container{
+
+    width:90%;
+    max-width:1200px;
+    margin:auto;
+    padding:40px 0;
+
+}
+
+/* HERO */
 
 .hero{
-    height:100vh;
+
+    min-height:100vh;
+
     display:flex;
     justify-content:center;
     align-items:center;
+
     text-align:center;
-    padding:20px;
+
 }
 
 .card{
 
-    width:90%;
-    max-width:900px;
-    background:rgba(255,255,255,0.08);
-    backdrop-filter:blur(12px);
-    border-radius:30px;
-    padding:50px;
-    box-shadow:0 0 40px rgba(255,0,255,0.3);
+    width:100%;
+    max-width:1000px;
 
-    animation:fadeUp 1.5s ease;
+    background:rgba(255,255,255,0.05);
+
+    backdrop-filter:blur(15px);
+
+    border:1px solid rgba(255,255,255,0.1);
+
+    border-radius:40px;
+
+    padding:60px;
+
+    box-shadow:
+    0 0 40px rgba(255,0,255,0.2);
+
+    animation:fade 1.5s ease;
 
 }
 
-@keyframes fadeUp{
+@keyframes fade{
 
     from{
-        transform:translateY(80px);
         opacity:0;
+        transform:translateY(80px);
     }
 
     to{
-        transform:translateY(0);
         opacity:1;
+        transform:translateY(0);
     }
 
 }
 
-/* Upload Image */
+/* PROFILE */
 
-.profile-container{
-    position:relative;
-    display:inline-block;
-}
+.profile{
 
-.profile-img{
+    width:230px;
+    height:230px;
 
-    width:200px;
-    height:200px;
     border-radius:50%;
+
     object-fit:cover;
-    border:5px solid #ff00ff;
-    box-shadow:0 0 30px #ff00ff;
 
-    animation:glow 2s infinite alternate;
+    border:5px solid #ff00cc;
 
-}
+    box-shadow:
+    0 0 30px #ff00cc,
+    0 0 80px rgba(255,0,255,0.3);
 
-@keyframes glow{
-
-    from{
-        box-shadow:0 0 20px #ff00ff;
-    }
-
-    to{
-        box-shadow:0 0 50px #00ffff;
-    }
+    transition:0.5s;
 
 }
 
-.upload-btn{
+.profile:hover{
 
-    display:inline-block;
-    margin-top:20px;
-    padding:12px 25px;
-    background:linear-gradient(45deg,#ff00ff,#00ffff);
-    border:none;
-    border-radius:50px;
-    color:white;
-    cursor:pointer;
-    font-weight:bold;
-    transition:0.4s;
+    transform:scale(1.05);
 
 }
 
-.upload-btn:hover{
-
-    transform:scale(1.1);
-
-}
+/* UPLOAD BUTTON */
 
 input[type=file]{
+
     display:none;
+
 }
 
-/* Text */
+.upload{
+
+    display:inline-block;
+
+    margin-top:25px;
+
+    padding:14px 35px;
+
+    border-radius:50px;
+
+    background:linear-gradient(45deg,#ff00cc,#7d5fff);
+
+    cursor:pointer;
+
+    transition:0.4s;
+
+    font-weight:bold;
+
+}
+
+.upload:hover{
+
+    transform:scale(1.08);
+
+}
+
+/* TEXT */
 
 h1{
 
-    font-size:60px;
-    margin-top:30px;
-    background:linear-gradient(90deg,#ff00ff,#00ffff);
+    margin-top:35px;
+
+    font-size:70px;
+
+    letter-spacing:4px;
+
+    background:linear-gradient(90deg,#ff00cc,#7d5fff);
+
     -webkit-background-clip:text;
     -webkit-text-fill-color:transparent;
 
 }
 
-.student-id{
+.student{
 
     margin-top:10px;
+
+    color:#bbb;
+
     font-size:22px;
-    color:#ccc;
+
+    letter-spacing:3px;
 
 }
 
 .quote{
 
-    margin-top:20px;
-    font-size:18px;
-    line-height:1.8;
+    margin-top:25px;
+
+    line-height:2;
+
     color:#ddd;
+
+    font-size:19px;
 
 }
 
-/* Sections */
+/* SECTION */
 
 .section{
 
-    width:90%;
-    max-width:1100px;
-    margin:80px auto;
+    margin-top:90px;
 
 }
 
-.section h2{
+.section-title{
 
-    font-size:40px;
+    font-size:38px;
+
     margin-bottom:25px;
-    color:#ff66ff;
+
+    color:#ff66da;
+
+    letter-spacing:3px;
 
 }
 
 .box{
 
     background:rgba(255,255,255,0.05);
-    padding:35px;
-    border-radius:25px;
+
+    padding:40px;
+
+    border-radius:30px;
+
     line-height:2;
-    box-shadow:0 0 20px rgba(255,255,255,0.05);
+
+    border:1px solid rgba(255,255,255,0.08);
 
 }
 
-/* Skills */
+/* GRID */
 
-.skills{
+.grid{
 
-    display:flex;
-    flex-wrap:wrap;
-    gap:15px;
+    display:grid;
 
-}
+    grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
 
-.skill{
-
-    padding:12px 25px;
-    background:linear-gradient(45deg,#ff00ff,#6a00ff);
-    border-radius:50px;
-    font-weight:bold;
+    gap:25px;
 
 }
 
-/* Gallery */
+/* SMALL BOX */
+
+.small-box{
+
+    background:rgba(255,255,255,0.05);
+
+    border-radius:25px;
+
+    padding:35px;
+
+    transition:0.4s;
+
+    border:1px solid rgba(255,255,255,0.08);
+
+}
+
+.small-box:hover{
+
+    transform:translateY(-10px);
+
+    box-shadow:0 0 30px rgba(255,0,255,0.15);
+
+}
+
+.small-box h3{
+
+    color:#ff66da;
+
+    margin-bottom:20px;
+
+    font-size:24px;
+
+}
+
+/* GALLERY */
 
 .gallery{
 
     display:grid;
+
     grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+
     gap:20px;
 
 }
@@ -278,9 +322,13 @@ h1{
 .gallery img{
 
     width:100%;
-    height:280px;
+
+    height:300px;
+
     object-fit:cover;
-    border-radius:20px;
+
+    border-radius:25px;
+
     transition:0.5s;
 
 }
@@ -291,30 +339,44 @@ h1{
 
 }
 
-/* Music Button */
+/* MUSIC BUTTON */
 
-.music-btn{
+.music{
 
     position:fixed;
+
     top:20px;
     right:20px;
-    background:#ff00ff;
-    color:white;
+
+    background:linear-gradient(45deg,#ff00cc,#7d5fff);
+
     border:none;
-    padding:15px 20px;
+
+    padding:15px 22px;
+
     border-radius:50px;
+
+    color:white;
+
     cursor:pointer;
+
+    font-weight:bold;
+
     z-index:999;
 
 }
 
-/* Footer */
+/* FOOTER */
 
 .footer{
 
     text-align:center;
-    padding:50px;
-    color:#999;
+
+    padding:80px 0;
+
+    color:#666;
+
+    letter-spacing:3px;
 
 }
 
@@ -326,25 +388,35 @@ h1{
 
 <!-- MUSIC -->
 
-<audio id="bgmusic" loop>
-    <source src="music.mp3" type="audio/mpeg">
+<audio id="music" loop>
+
+<source src="music.mp3" type="audio/mpeg">
+
 </audio>
 
-<button class="music-btn" onclick="toggleMusic()">
-🎵 Play Music
+<button class="music" onclick="toggleMusic()">
+
+🎵 PLAY MUSIC
+
 </button>
 
-<!-- Animated Background -->
+<!-- BACKGROUND -->
 
-<div class="bg-animation">
+<div class="bg">
 
-    <span></span>
-    <span></span>
-    <span></span>
-    <span></span>
-    <span></span>
+<span style="left:10%; animation-duration:5s;"></span>
+<span style="left:20%; animation-duration:8s;"></span>
+<span style="left:30%; animation-duration:6s;"></span>
+<span style="left:40%; animation-duration:9s;"></span>
+<span style="left:50%; animation-duration:7s;"></span>
+<span style="left:60%; animation-duration:5s;"></span>
+<span style="left:70%; animation-duration:10s;"></span>
+<span style="left:80%; animation-duration:6s;"></span>
+<span style="left:90%; animation-duration:8s;"></span>
 
 </div>
+
+<div class="container">
 
 <!-- HERO -->
 
@@ -352,48 +424,76 @@ h1{
 
 <div class="card">
 
-    <div class="profile-container">
+<img src="https://i.imgur.com/6VBx3io.png"
+class="profile"
+id="profilePreview">
 
-        <img src="https://i.imgur.com/6VBx3io.png"
-        class="profile-img"
-        id="profilePreview">
+<br>
 
-        <label class="upload-btn">
+<label class="upload">
 
-            Upload Profile
+UPLOAD PROFILE
 
-            <input type="file"
-            id="uploadProfile"
-            accept="image/*">
+<input type="file"
+id="uploadProfile"
+accept="image/*">
 
-        </label>
+</label>
 
-    </div>
+<h1>PROMPORN</h1>
 
-    <h1>พรหมพร สว่างศรี</h1>
+<div class="student">
 
-    <div class="student-id">
-        Student ID : 6650101320
-    </div>
+6650101320
 
-    <div class="quote">
+</div>
 
-        “Luxury is not a price tag.
-        It’s a lifestyle and a mindset.”
+<div class="quote">
 
-    </div>
+“Luxury is not about showing money.  
+It’s about standards, silence, and power.”
+
+</div>
 
 </div>
 
 </section>
 
-<!-- ACHIEVEMENTS -->
+<!-- ABOUT -->
 
 <section class="section">
 
-<h2>ACHIEVEMENTS</h2>
+<h2 class="section-title">
+
+ABOUT ME
+
+</h2>
 
 <div class="box">
+
+นักศึกษาจบใหม่สาย Business & Luxury Lifestyle  
+จากมหาวิทยาลัยระดับชั้นนำของประเทศ  
+(ชื่อมหาวิทยาลัยยังคงเป็นความลับ)
+
+มีความสนใจด้านธุรกิจ การลงทุน การสร้างแบรนด์ 
+และการพัฒนาภาพลักษณ์ระดับพรีเมียม
+
+ชอบความสงบ ความเป็นส่วนตัว 
+และเชื่อว่า “Mindset คือทรัพย์สินที่แพงที่สุด”
+
+</div>
+
+</section>
+
+<!-- GRID -->
+
+<section class="section">
+
+<div class="grid">
+
+<div class="small-box">
+
+<h3>ACHIEVEMENTS</h3>
 
 🏆 Top Student Business Competition 2025 <br>
 🏆 Young Entrepreneur Award <br>
@@ -401,117 +501,88 @@ h1{
 
 </div>
 
-</section>
+<div class="small-box">
 
-<!-- LIFESTYLE -->
+<h3>LIFESTYLE</h3>
 
-<section class="section">
+✦ Luxury Brand <br>
+✦ Midnight Music <br>
+✦ Investment Mindset <br>
+✦ International Travel
 
-<h2>LIFESTYLE</h2>
+</div>
 
-<div class="box">
+<div class="small-box">
 
-✦ สนใจธุรกิจ Luxury Brand <br>
-✦ ชอบเดินทางต่างประเทศ <br>
-✦ สนใจการลงทุนและการสร้างแบรนด์ <br>
-✦ ใช้ชีวิตสไตล์ Luxury & Elite
+<h3>FUTURE GOAL</h3>
+
+“To become a successful business owner
+and inspire people through creativity
+and leadership.”
+
+</div>
+
+<div class="small-box">
+
+<h3>SOCIAL</h3>
+
+📸 @luxury.promporn <br>
+🎵 @prombusiness <br>
+📧 secretbusiness@email.com
+
+</div>
 
 </div>
 
 </section>
 
-<!-- SKILLS -->
+<!-- GALLERY -->
 
 <section class="section">
 
-<h2>SKILLS</h2>
+<h2 class="section-title">
 
-<div class="skills">
+PRIVATE GALLERY
 
-<div class="skill">Business Strategy</div>
-<div class="skill">Luxury Branding</div>
-<div class="skill">Investment</div>
-<div class="skill">Marketing</div>
-<div class="skill">Leadership</div>
-<div class="skill">Canva Design</div>
+</h2>
 
-</div>
+<label class="upload">
 
-</section>
+UPLOAD IMAGES
 
-<!-- PHOTO GALLERY -->
-
-<section class="section">
-
-<h2>PHOTO GALLERY</h2>
-
-<label class="upload-btn">
-
-    Upload Gallery Images
-
-    <input type="file"
-    id="galleryUpload"
-    accept="image/*"
-    multiple>
+<input type="file"
+id="galleryUpload"
+accept="image/*"
+multiple>
 
 </label>
 
 <br><br>
 
-<div class="gallery" id="galleryContainer">
+<div class="gallery"
+id="galleryContainer">
 
-    <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330">
+<img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330">
 
-    <img src="https://images.unsplash.com/photo-1515886657613-9f3515b0c78f">
+<img src="https://images.unsplash.com/photo-1515886657613-9f3515b0c78f">
 
-    <img src="https://images.unsplash.com/photo-1524504388940-b1c1722653e1">
-
-</div>
-
-</section>
-
-<!-- FUTURE GOAL -->
-
-<section class="section">
-
-<h2>FUTURE GOAL</h2>
-
-<div class="box">
-
-“To become a successful business owner
-and inspire people through creativity and leadership.”
+<img src="https://images.unsplash.com/photo-1524504388940-b1c1722653e1">
 
 </div>
 
 </section>
-
-<!-- SOCIAL -->
-
-<section class="section">
-
-<h2>SOCIAL MEDIA</h2>
-
-<div class="box">
-
-📸 Instagram : @luxury.promporn <br>
-🎵 TikTok : @prombusiness <br>
-📧 Email : secretbusiness@email.com
-
-</div>
-
-</section>
-
-<!-- FOOTER -->
 
 <div class="footer">
 
-© 2026 PROMPORN SAWANGSRI | LUXURY PORTFOLIO
+PROMPORN SAWANGSRI • PRIVATE LUXURY IDENTITY • 2026
+
+</div>
 
 </div>
 
 <script>
 
-/* Upload Profile */
+/* PROFILE UPLOAD */
 
 const uploadProfile =
 document.getElementById("uploadProfile");
@@ -519,7 +590,7 @@ document.getElementById("uploadProfile");
 const profilePreview =
 document.getElementById("profilePreview");
 
-uploadProfile.addEventListener("change", function(){
+uploadProfile.addEventListener("change",function(){
 
     const file = this.files[0];
 
@@ -539,7 +610,7 @@ uploadProfile.addEventListener("change", function(){
 
 });
 
-/* Upload Gallery Images */
+/* GALLERY UPLOAD */
 
 const galleryUpload =
 document.getElementById("galleryUpload");
@@ -547,11 +618,11 @@ document.getElementById("galleryUpload");
 const galleryContainer =
 document.getElementById("galleryContainer");
 
-galleryUpload.addEventListener("change", function(){
+galleryUpload.addEventListener("change",function(){
 
     const files = this.files;
 
-    for(let i = 0; i < files.length; i++){
+    for(let i=0;i<files.length;i++){
 
         const file = files[i];
 
@@ -564,9 +635,6 @@ galleryUpload.addEventListener("change", function(){
 
             img.src = e.target.result;
 
-            img.style.animation =
-            "fadeUp 1s ease";
-
             galleryContainer.appendChild(img);
 
         }
@@ -577,10 +645,10 @@ galleryUpload.addEventListener("change", function(){
 
 });
 
-/* Music */
+/* MUSIC */
 
 const music =
-document.getElementById("bgmusic");
+document.getElementById("music");
 
 function toggleMusic(){
 
