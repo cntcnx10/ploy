@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Promporn Sawangsri | Luxury Portfolio</title>
+
+<style>
+    /* สไตล์เดิมที่คงความหรูหรา */
+    *{
+        margin:0;
+        padding:0;
+        box-sizing:border-box;
+        font-family: "Poppins", "Kanit", sans-serif;
+    }
+
+    body{
+        background:#0f0f0f;
+        color:white;
+        overflow-x:hidden;
+    }
+
+    body::before{
+        content:"";
+        position:fixed;
+        width:100%;
+        height:100%;
+        background:
+        radial-gradient(circle at top right,#ff00cc33,transparent 25%),
+        radial-gradient(circle at bottom left,#6a00ff33,transparent 25%);
+        z-index:-1;
+    }
+
+    .container{
+        width:90%;
+        max-width:1200px;
+        margin:auto;
+        padding:40px 0;
+    }
+
+    .hero{
+        min-height:100vh;
+        display:flex;
+        align-items:center;
+        justify-content:center;
+        text-align:center;
+    }
+
+    .card{
+        background:rgba(255,255,255,0.08);
+        backdrop-filter:blur(15px);
+        border-radius:30px;
+        padding:60px;
+        width:100%;
+        border:1px solid rgba(255,255,255,0.1);
+        box-shadow:0 0 40px rgba(255,0,200,0.2);
+    }
+
+    .profile-img{
+        width:220px;
+        height:220px;
+        border-radius:50%;
+        object-fit:cover;
+        border:5px solid #ff00cc;
+        margin-bottom:25px;
+        box-shadow:0 0 30px #ff00cc;
+        background-color: #222; /* สีพื้นหลังกรณีรูปยังไม่โหลด */
+    }
+
+    .upload-box{
+        margin-top:15px;
+    }
+
+    input[type="file"]{
+        display:none;
+    }
+
+    .upload-btn{
+        display:inline-block;
+        padding:12px 25px;
+        background:linear-gradient(135deg,#ff00cc,#7d5fff);
+        border-radius:40px;
+        cursor:pointer;
+        font-weight:bold;
+        transition:0.3s;
+        font-size: 14px;
+    }
+
+    .upload-btn:hover{
+        transform:scale(1.05);
+        box-shadow: 0 5px 15px rgba(255, 0, 204, 0.4);
+    }
+
+    h1{
+        font-size:55px;
+        margin-top:30px;
+        background:linear-gradient(90deg,#ff00cc,#7d5fff);
+        -webkit-background-clip:text;
+        -webkit-text-fill-color:transparent;
+        letter-spacing: 2px;
+    }
+
+    .student-id{
+        font-size:22px;
+        color:#ff66da;
+        margin-top:10px;
+        font-weight: 500;
+    }
+
+    .quote{
+        margin-top:20px;
+        color:#bbb;
+        line-height:1.8;
+        font-size:18px;
+        font-style: italic;
+    }
+
+    .section{
+        margin-top:80px;
+    }
+
+    .section-title{
+        font-size:35px;
+        color:#ff66da;
+        margin-bottom:25px;
+        border-left: 5px solid #7d5fff;
+        padding-left: 15px;
+    }
+
+    .info-box{
+        background:rgba(255,255,255,0.05);
+        padding:35px;
+        border-radius:25px;
+        line-height:2;
+        font-size:18px;
+        box-shadow:0 0 25px rgba(255,255,255,0.05);
+        border: 1px solid rgba(255,255,255,0.1);
+    }
+
+    .skills{
+        display:flex;
+        flex-wrap:wrap;
+        gap:15px;
+    }
+
+    .skill{
+        background:linear-gradient(135deg,#ff00cc,#7d5fff);
+        padding:12px 25px;
+        border-radius:50px;
+        font-weight:bold;
+        font-size: 14px;
+        transition: 0.3s;
+    }
+
+    .skill:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 5px 15px rgba(125, 95, 255, 0.4);
+    }
+
+    .gallery{
+        display:grid;
+        grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
+        gap:20px;
+    }
+
+    .gallery img{
+        width:100%;
+        border-radius:20px;
+        object-fit:cover;
+        height:300px;
+        transition:0.5s;
+        filter: grayscale(30%);
+    }
+
+    .gallery img:hover{
+        transform:scale(1.03);
+        filter: grayscale(0%);
+    }
+
+    .footer{
+        text-align:center;
+        padding:60px 0;
+        color:#666;
+        font-size: 14px;
+        letter-spacing: 1px;
+    }
+</style>
+</head>
+
+<body>
+
+<div class="container">
+
+    <!-- HERO SECTION -->
+    <section class="hero">
+        <div class="card">
+            <!-- ส่วนรูปโปรไฟล์: แก้ไข 'profile.jpg' เป็นชื่อไฟล์รูปของคุณ -->
+            <img id="profilePreview" 
+                 src="https://via.placeholder.com/220x220/222/ff00cc?text=PROMPORN" 
+                 class="profile-img" 
+                 alt="พรหมพร สว่างศรี">
+
+            <div class="upload-box">
+                <label for="uploadProfile" class="upload-btn">
+                    CHOOSE PROFILE IMAGE
+                </label>
+                <input type="file" id="uploadProfile" accept="image/*">
+            </div>
+
+            <h1>พรหมพร สว่างศรี</h1>
+
+            <div class="student-id">
+                Student ID : 6650101320
+            </div>
+
+            <div class="quote">
+                "Excellence is not a skill, it's an attitude." <br>
+                สาย Luxury Business & Elite Lifestyle <br>
+                มุ่งเน้นการสร้างคุณค่าที่เหนือระดับและการเติบโตอย่างยั่งยืน
+            </div>
+        </div>
+    </section>
+
+    <!-- PROFILE SECTION -->
+    <section class="section">
+        <h2 class="section-title">PROFILE</h2>
+        <div class="info-box">
+            นักศึกษาสาย Business Management ที่มีความเชี่ยวชาญและหลงใหลในโลกของธุรกิจระดับสูง (Luxury Segment) 
+            มีความสามารถในการวิเคราะห์แนวโน้มตลาด การลงทุน และการสร้างภาพลักษณ์แบรนด์ให้ดูโดดเด่นและมีระดับ 
+            มุ่งมั่นที่จะพัฒนาทักษะด้านการบริหารจัดการและกลยุทธ์ธุรกิจเพื่อก้าวสู่ความสำเร็จในระดับสากล
+        </div>
+    </section>
+
+    <!-- SKILLS SECTION -->
+    <section class="section">
+        <h2 class="section-title">EXPERTISE & SKILLS</h2>
+        <div class="skills">
+            <div class="skill">Luxury Branding</div>
+            <div class="skill">Premium Marketing</div>
+            <div class="skill">Strategic Investment</div>
+            <div class="skill">Elite Leadership</div>
+            <div class="skill">Creative Canva Design</div>
+            <div class="skill">Public Speaking</div>
+            <div class="skill">Business Analysis</div>
+        </div>
+    </section>
+
+    <!-- GALLERY SECTION -->
+    <section class="section">
+        <h2 class="section-title">LIFESTYLE GALLERY</h2>
+        <div class="gallery">
+            <img src="https://images.unsplash.com/photo-1515886657613-9f3515b0c78f" alt="Lifestyle 1">
+            <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330" alt="Lifestyle 2">
+            <img src="https://images.unsplash.com/photo-1524504388940-b1c1722653e1" alt="Lifestyle 3">
+        </div>
+    </section>
+
+    <!-- CONTACT SECTION -->
+    <section class="section">
+        <h2 class="section-title">GET IN TOUCH</h2>
+        <div class="info-box" style="text-align: center;">
+             📍 Bangkok, Thailand <br>
+             📧 luxurybusiness@email.com <br>
+             📞 +66 XX XXX XXXX <br>
+             📸 Instagram : <a href="#" style="color:#ff66da; text-decoration:none;">@luxury.promporn</a>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <div class="footer">
+        © 2026 PROMPORN SAWANGSRI | DESIGNED FOR EXCELLENCE
+    </div>
+
+</div>
+
+<script>
+    /* สคริปต์สำหรับเปลี่ยนรูปโปรไฟล์แบบ Real-time */
+    const uploadProfile = document.getElementById("uploadProfile");
+    const profilePreview = document.getElementById("profilePreview");
+
+    uploadProfile.addEventListener("change", function(){
+        const file = this.files[0];
+        if(file){
+            const reader = new FileReader();
+            reader.onload = function(e){
+                profilePreview.src = e.target.result;
+            }
+            reader.readAsDataURL(file);
+        }
+    });
+</script>
+
+</body>
+</html>
