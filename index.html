@@ -6,7 +6,7 @@
 <title>Promporn Sawangsri | Luxury Portfolio</title>
 
 <style>
-    /* สไตล์เดิมที่คงความหรูหรา */
+    /* สไตล์หรูหรา ธีม Dark & Pink Gold */
     *{
         margin:0;
         padding:0;
@@ -64,7 +64,7 @@
         border:5px solid #ff00cc;
         margin-bottom:25px;
         box-shadow:0 0 30px #ff00cc;
-        background-color: #222; /* สีพื้นหลังกรณีรูปยังไม่โหลด */
+        background-color: #222;
     }
 
     .upload-box{
@@ -84,6 +84,7 @@
         font-weight:bold;
         transition:0.3s;
         font-size: 14px;
+        text-transform: uppercase;
     }
 
     .upload-btn:hover{
@@ -157,32 +158,11 @@
         box-shadow: 0 5px 15px rgba(125, 95, 255, 0.4);
     }
 
-    .gallery{
-        display:grid;
-        grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
-        gap:20px;
-    }
-
-    .gallery img{
-        width:100%;
-        border-radius:20px;
-        object-fit:cover;
-        height:300px;
-        transition:0.5s;
-        filter: grayscale(30%);
-    }
-
-    .gallery img:hover{
-        transform:scale(1.03);
-        filter: grayscale(0%);
-    }
-
     .footer{
         text-align:center;
         padding:60px 0;
         color:#666;
         font-size: 14px;
-        letter-spacing: 1px;
     }
 </style>
 </head>
@@ -194,15 +174,15 @@
     <!-- HERO SECTION -->
     <section class="hero">
         <div class="card">
-            <!-- ส่วนรูปโปรไฟล์: แก้ไข 'profile.jpg' เป็นชื่อไฟล์รูปของคุณ -->
+            <!-- เชื่อมต่อไฟล์รูปตามชื่อที่คุณระบุ -->
             <img id="profilePreview" 
-                 src="https://via.placeholder.com/220x220/222/ff00cc?text=PROMPORN" 
+                 src="พรหมพร สว่างศรี.jpg" 
                  class="profile-img" 
                  alt="พรหมพร สว่างศรี">
 
             <div class="upload-box">
                 <label for="uploadProfile" class="upload-btn">
-                    CHOOSE PROFILE IMAGE
+                    Update Profile Image
                 </label>
                 <input type="file" id="uploadProfile" accept="image/*">
             </div>
@@ -245,36 +225,25 @@
         </div>
     </section>
 
-    <!-- GALLERY SECTION -->
-    <section class="section">
-        <h2 class="section-title">LIFESTYLE GALLERY</h2>
-        <div class="gallery">
-            <img src="https://images.unsplash.com/photo-1515886657613-9f3515b0c78f" alt="Lifestyle 1">
-            <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330" alt="Lifestyle 2">
-            <img src="https://images.unsplash.com/photo-1524504388940-b1c1722653e1" alt="Lifestyle 3">
-        </div>
-    </section>
-
     <!-- CONTACT SECTION -->
     <section class="section">
-        <h2 class="section-title">GET IN TOUCH</h2>
+        <h2 class="section-title">CONTACT</h2>
         <div class="info-box" style="text-align: center;">
              📍 Bangkok, Thailand <br>
              📧 luxurybusiness@email.com <br>
-             📞 +66 XX XXX XXXX <br>
-             📸 Instagram : <a href="#" style="color:#ff66da; text-decoration:none;">@luxury.promporn</a>
+             📸 Instagram : @luxury.promporn
         </div>
     </section>
 
     <!-- FOOTER -->
     <div class="footer">
-        © 2026 PROMPORN SAWANGSRI | DESIGNED FOR EXCELLENCE
+        © 2026 PROMPORN SAWANGSRI | LUXURY PORTFOLIO
     </div>
 
 </div>
 
 <script>
-    /* สคริปต์สำหรับเปลี่ยนรูปโปรไฟล์แบบ Real-time */
+    /* สคริปต์สำหรับเปลี่ยนรูปโปรไฟล์จากเครื่อง */
     const uploadProfile = document.getElementById("uploadProfile");
     const profilePreview = document.getElementById("profilePreview");
 
