@@ -24,7 +24,7 @@ body{
     overflow-x:hidden;
 }
 
-/* BACKGROUND ANIMATION */
+/* BACKGROUND */
 
 .bg{
     position:fixed;
@@ -133,36 +133,6 @@ body{
 
 .profile:hover{
     transform:scale(1.05);
-}
-
-/* BUTTON */
-
-input[type=file]{
-    display:none;
-}
-
-.upload{
-
-    display:inline-block;
-
-    margin-top:25px;
-
-    padding:14px 35px;
-
-    border-radius:50px;
-
-    background:linear-gradient(45deg,#ff00cc,#7d5fff);
-
-    cursor:pointer;
-
-    transition:0.4s;
-
-    font-weight:bold;
-
-}
-
-.upload:hover{
-    transform:scale(1.08);
 }
 
 /* TEXT */
@@ -395,21 +365,10 @@ h1{
 
 <div class="card">
 
-<img src="https://i.imgur.com/6VBx3io.png"
-class="profile"
-id="profilePreview">
+<!-- ใช้ไฟล์รูปชื่อ พรหมพร สว่างศรี.jpg -->
 
-<br>
-
-<label class="upload">
-
-UPLOAD PROFILE
-
-<input type="file"
-id="uploadProfile"
-accept="image/*">
-
-</label>
+<img src="พรหมพร สว่างศรี.jpg"
+class="profile">
 
 <h1>พรหมพร สว่างศรี</h1>
 
@@ -444,6 +403,8 @@ ABOUT ME
 
 มีความสนใจด้านธุรกิจ การลงทุน การสร้างแบรนด์
 และการพัฒนาภาพลักษณ์ระดับพรีเมียม
+
+ชอบความเรียบหรู ความสงบ และการใช้ชีวิตอย่างมีระดับ
 
 </div>
 
@@ -508,27 +469,13 @@ and leadership.”
 PRIVATE GALLERY
 </h2>
 
-<label class="upload">
+<div class="gallery">
 
-UPLOAD IMAGES
-
-<input type="file"
-id="galleryUpload"
-accept="image/*"
-multiple>
-
-</label>
-
-<br><br>
-
-<div class="gallery"
-id="galleryContainer">
+<img src="พรหมพร สว่างศรี.jpg">
 
 <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330">
 
 <img src="https://images.unsplash.com/photo-1515886657613-9f3515b0c78f">
-
-<img src="https://images.unsplash.com/photo-1524504388940-b1c1722653e1">
 
 </div>
 
@@ -554,69 +501,6 @@ window.addEventListener("click", () => {
     music.play();
 
 },{ once:true });
-
-/* PROFILE UPLOAD */
-
-const uploadProfile =
-document.getElementById("uploadProfile");
-
-const profilePreview =
-document.getElementById("profilePreview");
-
-uploadProfile.addEventListener("change",function(){
-
-    const file = this.files[0];
-
-    if(file){
-
-        const reader = new FileReader();
-
-        reader.onload = function(e){
-
-            profilePreview.src = e.target.result;
-
-        }
-
-        reader.readAsDataURL(file);
-
-    }
-
-});
-
-/* GALLERY UPLOAD */
-
-const galleryUpload =
-document.getElementById("galleryUpload");
-
-const galleryContainer =
-document.getElementById("galleryContainer");
-
-galleryUpload.addEventListener("change",function(){
-
-    const files = this.files;
-
-    for(let i=0;i<files.length;i++){
-
-        const file = files[i];
-
-        const reader = new FileReader();
-
-        reader.onload = function(e){
-
-            const img =
-            document.createElement("img");
-
-            img.src = e.target.result;
-
-            galleryContainer.appendChild(img);
-
-        }
-
-        reader.readAsDataURL(file);
-
-    }
-
-});
 
 /* MUSIC BUTTON */
 
