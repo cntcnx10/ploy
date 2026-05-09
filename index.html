@@ -3,260 +3,599 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Promporn Sawangsri | Luxury Portfolio</title>
+
+<title>Luxury Portfolio</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
 
 <style>
-    /* สไตล์หรูหรา ธีม Dark & Pink Gold */
-    *{
-        margin:0;
-        padding:0;
-        box-sizing:border-box;
-        font-family: "Poppins", "Kanit", sans-serif;
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Poppins',sans-serif;
+}
+
+body{
+    background:#000;
+    color:white;
+    overflow-x:hidden;
+}
+
+/* Animated Background */
+
+.bg-animation{
+    position:fixed;
+    width:100%;
+    height:100%;
+    overflow:hidden;
+    z-index:-1;
+}
+
+.bg-animation span{
+    position:absolute;
+    display:block;
+    width:20px;
+    height:20px;
+    background:rgba(255,255,255,0.08);
+    animation:animate 20s linear infinite;
+    bottom:-150px;
+    border-radius:50%;
+}
+
+.bg-animation span:nth-child(1){
+    left:10%;
+    width:80px;
+    height:80px;
+    animation-duration:15s;
+}
+
+.bg-animation span:nth-child(2){
+    left:25%;
+    width:30px;
+    height:30px;
+    animation-duration:10s;
+}
+
+.bg-animation span:nth-child(3){
+    left:40%;
+    width:100px;
+    height:100px;
+    animation-duration:18s;
+}
+
+.bg-animation span:nth-child(4){
+    left:70%;
+    width:50px;
+    height:50px;
+    animation-duration:12s;
+}
+
+.bg-animation span:nth-child(5){
+    left:85%;
+    width:120px;
+    height:120px;
+    animation-duration:22s;
+}
+
+@keyframes animate{
+
+    0%{
+        transform:translateY(0) rotate(0deg);
+        opacity:0;
     }
 
-    body{
-        background:#0f0f0f;
-        color:white;
-        overflow-x:hidden;
+    100%{
+        transform:translateY(-1200px) rotate(720deg);
+        opacity:1;
     }
 
-    body::before{
-        content:"";
-        position:fixed;
-        width:100%;
-        height:100%;
-        background:
-        radial-gradient(circle at top right,#ff00cc33,transparent 25%),
-        radial-gradient(circle at bottom left,#6a00ff33,transparent 25%);
-        z-index:-1;
+}
+
+/* Hero */
+
+.hero{
+    height:100vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    text-align:center;
+    padding:20px;
+}
+
+.card{
+
+    width:90%;
+    max-width:900px;
+    background:rgba(255,255,255,0.08);
+    backdrop-filter:blur(12px);
+    border-radius:30px;
+    padding:50px;
+    box-shadow:0 0 40px rgba(255,0,255,0.3);
+
+    animation:fadeUp 1.5s ease;
+
+}
+
+@keyframes fadeUp{
+
+    from{
+        transform:translateY(80px);
+        opacity:0;
     }
 
-    .container{
-        width:90%;
-        max-width:1200px;
-        margin:auto;
-        padding:40px 0;
+    to{
+        transform:translateY(0);
+        opacity:1;
     }
 
-    .hero{
-        min-height:100vh;
-        display:flex;
-        align-items:center;
-        justify-content:center;
-        text-align:center;
+}
+
+/* Upload Image */
+
+.profile-container{
+    position:relative;
+    display:inline-block;
+}
+
+.profile-img{
+
+    width:200px;
+    height:200px;
+    border-radius:50%;
+    object-fit:cover;
+    border:5px solid #ff00ff;
+    box-shadow:0 0 30px #ff00ff;
+
+    animation:glow 2s infinite alternate;
+
+}
+
+@keyframes glow{
+
+    from{
+        box-shadow:0 0 20px #ff00ff;
     }
 
-    .card{
-        background:rgba(255,255,255,0.08);
-        backdrop-filter:blur(15px);
-        border-radius:30px;
-        padding:60px;
-        width:100%;
-        border:1px solid rgba(255,255,255,0.1);
-        box-shadow:0 0 40px rgba(255,0,200,0.2);
+    to{
+        box-shadow:0 0 50px #00ffff;
     }
 
-    .profile-img{
-        width:220px;
-        height:220px;
-        border-radius:50%;
-        object-fit:cover;
-        border:5px solid #ff00cc;
-        margin-bottom:25px;
-        box-shadow:0 0 30px #ff00cc;
-        background-color: #222;
-    }
+}
 
-    .upload-box{
-        margin-top:15px;
-    }
+.upload-btn{
 
-    input[type="file"]{
-        display:none;
-    }
+    display:inline-block;
+    margin-top:20px;
+    padding:12px 25px;
+    background:linear-gradient(45deg,#ff00ff,#00ffff);
+    border:none;
+    border-radius:50px;
+    color:white;
+    cursor:pointer;
+    font-weight:bold;
+    transition:0.4s;
 
-    .upload-btn{
-        display:inline-block;
-        padding:12px 25px;
-        background:linear-gradient(135deg,#ff00cc,#7d5fff);
-        border-radius:40px;
-        cursor:pointer;
-        font-weight:bold;
-        transition:0.3s;
-        font-size: 14px;
-        text-transform: uppercase;
-    }
+}
 
-    .upload-btn:hover{
-        transform:scale(1.05);
-        box-shadow: 0 5px 15px rgba(255, 0, 204, 0.4);
-    }
+.upload-btn:hover{
 
-    h1{
-        font-size:55px;
-        margin-top:30px;
-        background:linear-gradient(90deg,#ff00cc,#7d5fff);
-        -webkit-background-clip:text;
-        -webkit-text-fill-color:transparent;
-        letter-spacing: 2px;
-    }
+    transform:scale(1.1);
 
-    .student-id{
-        font-size:22px;
-        color:#ff66da;
-        margin-top:10px;
-        font-weight: 500;
-    }
+}
 
-    .quote{
-        margin-top:20px;
-        color:#bbb;
-        line-height:1.8;
-        font-size:18px;
-        font-style: italic;
-    }
+input[type=file]{
+    display:none;
+}
 
-    .section{
-        margin-top:80px;
-    }
+/* Text */
 
-    .section-title{
-        font-size:35px;
-        color:#ff66da;
-        margin-bottom:25px;
-        border-left: 5px solid #7d5fff;
-        padding-left: 15px;
-    }
+h1{
 
-    .info-box{
-        background:rgba(255,255,255,0.05);
-        padding:35px;
-        border-radius:25px;
-        line-height:2;
-        font-size:18px;
-        box-shadow:0 0 25px rgba(255,255,255,0.05);
-        border: 1px solid rgba(255,255,255,0.1);
-    }
+    font-size:60px;
+    margin-top:30px;
+    background:linear-gradient(90deg,#ff00ff,#00ffff);
+    -webkit-background-clip:text;
+    -webkit-text-fill-color:transparent;
 
-    .skills{
-        display:flex;
-        flex-wrap:wrap;
-        gap:15px;
-    }
+}
 
-    .skill{
-        background:linear-gradient(135deg,#ff00cc,#7d5fff);
-        padding:12px 25px;
-        border-radius:50px;
-        font-weight:bold;
-        font-size: 14px;
-        transition: 0.3s;
-    }
+.student-id{
 
-    .skill:hover {
-        transform: translateY(-5px);
-        box-shadow: 0 5px 15px rgba(125, 95, 255, 0.4);
-    }
+    margin-top:10px;
+    font-size:22px;
+    color:#ccc;
 
-    .footer{
-        text-align:center;
-        padding:60px 0;
-        color:#666;
-        font-size: 14px;
-    }
+}
+
+.quote{
+
+    margin-top:20px;
+    font-size:18px;
+    line-height:1.8;
+    color:#ddd;
+
+}
+
+/* Sections */
+
+.section{
+
+    width:90%;
+    max-width:1100px;
+    margin:80px auto;
+
+}
+
+.section h2{
+
+    font-size:40px;
+    margin-bottom:25px;
+    color:#ff66ff;
+
+}
+
+.box{
+
+    background:rgba(255,255,255,0.05);
+    padding:35px;
+    border-radius:25px;
+    line-height:2;
+    box-shadow:0 0 20px rgba(255,255,255,0.05);
+
+}
+
+/* Skills */
+
+.skills{
+
+    display:flex;
+    flex-wrap:wrap;
+    gap:15px;
+
+}
+
+.skill{
+
+    padding:12px 25px;
+    background:linear-gradient(45deg,#ff00ff,#6a00ff);
+    border-radius:50px;
+    font-weight:bold;
+
+}
+
+/* Gallery */
+
+.gallery{
+
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+    gap:20px;
+
+}
+
+.gallery img{
+
+    width:100%;
+    height:280px;
+    object-fit:cover;
+    border-radius:20px;
+    transition:0.5s;
+
+}
+
+.gallery img:hover{
+
+    transform:scale(1.05);
+
+}
+
+/* Music Button */
+
+.music-btn{
+
+    position:fixed;
+    top:20px;
+    right:20px;
+    background:#ff00ff;
+    color:white;
+    border:none;
+    padding:15px 20px;
+    border-radius:50px;
+    cursor:pointer;
+    z-index:999;
+
+}
+
+/* Footer */
+
+.footer{
+
+    text-align:center;
+    padding:50px;
+    color:#999;
+
+}
+
 </style>
+
 </head>
 
 <body>
 
-<div class="container">
+<!-- MUSIC -->
 
-    <!-- HERO SECTION -->
-    <section class="hero">
-        <div class="card">
-            <!-- เชื่อมต่อไฟล์รูปตามชื่อที่คุณระบุ -->
-            <img id="profilePreview" 
-                 src="พรหมพร สว่างศรี.jpg" 
-                 class="profile-img" 
-                 alt="พรหมพร สว่างศรี">
+<audio id="bgmusic" loop>
+    <source src="music.mp3" type="audio/mpeg">
+</audio>
 
-            <div class="upload-box">
-                <label for="uploadProfile" class="upload-btn">
-                    Update Profile Image
-                </label>
-                <input type="file" id="uploadProfile" accept="image/*">
-            </div>
+<button class="music-btn" onclick="toggleMusic()">
+🎵 Play Music
+</button>
 
-            <h1>พรหมพร สว่างศรี</h1>
+<!-- Animated Background -->
 
-            <div class="student-id">
-                Student ID : 6650101320
-            </div>
+<div class="bg-animation">
 
-            <div class="quote">
-                "Excellence is not a skill, it's an attitude." <br>
-                สาย Luxury Business & Elite Lifestyle <br>
-                มุ่งเน้นการสร้างคุณค่าที่เหนือระดับและการเติบโตอย่างยั่งยืน
-            </div>
-        </div>
-    </section>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
 
-    <!-- PROFILE SECTION -->
-    <section class="section">
-        <h2 class="section-title">PROFILE</h2>
-        <div class="info-box">
-            นักศึกษาสาย Business Management ที่มีความเชี่ยวชาญและหลงใหลในโลกของธุรกิจระดับสูง (Luxury Segment) 
-            มีความสามารถในการวิเคราะห์แนวโน้มตลาด การลงทุน และการสร้างภาพลักษณ์แบรนด์ให้ดูโดดเด่นและมีระดับ 
-            มุ่งมั่นที่จะพัฒนาทักษะด้านการบริหารจัดการและกลยุทธ์ธุรกิจเพื่อก้าวสู่ความสำเร็จในระดับสากล
-        </div>
-    </section>
+</div>
 
-    <!-- SKILLS SECTION -->
-    <section class="section">
-        <h2 class="section-title">EXPERTISE & SKILLS</h2>
-        <div class="skills">
-            <div class="skill">Luxury Branding</div>
-            <div class="skill">Premium Marketing</div>
-            <div class="skill">Strategic Investment</div>
-            <div class="skill">Elite Leadership</div>
-            <div class="skill">Creative Canva Design</div>
-            <div class="skill">Public Speaking</div>
-            <div class="skill">Business Analysis</div>
-        </div>
-    </section>
+<!-- HERO -->
 
-    <!-- CONTACT SECTION -->
-    <section class="section">
-        <h2 class="section-title">CONTACT</h2>
-        <div class="info-box" style="text-align: center;">
-             📍 Bangkok, Thailand <br>
-             📧 luxurybusiness@email.com <br>
-             📸 Instagram : @luxury.promporn
-        </div>
-    </section>
+<section class="hero">
 
-    <!-- FOOTER -->
-    <div class="footer">
-        © 2026 PROMPORN SAWANGSRI | LUXURY PORTFOLIO
+<div class="card">
+
+    <div class="profile-container">
+
+        <img src="https://i.imgur.com/6VBx3io.png"
+        class="profile-img"
+        id="profilePreview">
+
+        <label class="upload-btn">
+
+            Upload Profile
+
+            <input type="file"
+            id="uploadProfile"
+            accept="image/*">
+
+        </label>
+
+    </div>
+
+    <h1>พรหมพร สว่างศรี</h1>
+
+    <div class="student-id">
+        Student ID : 6650101320
+    </div>
+
+    <div class="quote">
+
+        “Luxury is not a price tag.
+        It’s a lifestyle and a mindset.”
+
     </div>
 
 </div>
 
-<script>
-    /* สคริปต์สำหรับเปลี่ยนรูปโปรไฟล์จากเครื่อง */
-    const uploadProfile = document.getElementById("uploadProfile");
-    const profilePreview = document.getElementById("profilePreview");
+</section>
 
-    uploadProfile.addEventListener("change", function(){
-        const file = this.files[0];
-        if(file){
-            const reader = new FileReader();
-            reader.onload = function(e){
-                profilePreview.src = e.target.result;
-            }
-            reader.readAsDataURL(file);
+<!-- ACHIEVEMENTS -->
+
+<section class="section">
+
+<h2>ACHIEVEMENTS</h2>
+
+<div class="box">
+
+🏆 Top Student Business Competition 2025 <br>
+🏆 Young Entrepreneur Award <br>
+🏆 Speaker in Marketing Workshop
+
+</div>
+
+</section>
+
+<!-- LIFESTYLE -->
+
+<section class="section">
+
+<h2>LIFESTYLE</h2>
+
+<div class="box">
+
+✦ สนใจธุรกิจ Luxury Brand <br>
+✦ ชอบเดินทางต่างประเทศ <br>
+✦ สนใจการลงทุนและการสร้างแบรนด์ <br>
+✦ ใช้ชีวิตสไตล์ Luxury & Elite
+
+</div>
+
+</section>
+
+<!-- SKILLS -->
+
+<section class="section">
+
+<h2>SKILLS</h2>
+
+<div class="skills">
+
+<div class="skill">Business Strategy</div>
+<div class="skill">Luxury Branding</div>
+<div class="skill">Investment</div>
+<div class="skill">Marketing</div>
+<div class="skill">Leadership</div>
+<div class="skill">Canva Design</div>
+
+</div>
+
+</section>
+
+<!-- PHOTO GALLERY -->
+
+<section class="section">
+
+<h2>PHOTO GALLERY</h2>
+
+<label class="upload-btn">
+
+    Upload Gallery Images
+
+    <input type="file"
+    id="galleryUpload"
+    accept="image/*"
+    multiple>
+
+</label>
+
+<br><br>
+
+<div class="gallery" id="galleryContainer">
+
+    <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330">
+
+    <img src="https://images.unsplash.com/photo-1515886657613-9f3515b0c78f">
+
+    <img src="https://images.unsplash.com/photo-1524504388940-b1c1722653e1">
+
+</div>
+
+</section>
+
+<!-- FUTURE GOAL -->
+
+<section class="section">
+
+<h2>FUTURE GOAL</h2>
+
+<div class="box">
+
+“To become a successful business owner
+and inspire people through creativity and leadership.”
+
+</div>
+
+</section>
+
+<!-- SOCIAL -->
+
+<section class="section">
+
+<h2>SOCIAL MEDIA</h2>
+
+<div class="box">
+
+📸 Instagram : @luxury.promporn <br>
+🎵 TikTok : @prombusiness <br>
+📧 Email : secretbusiness@email.com
+
+</div>
+
+</section>
+
+<!-- FOOTER -->
+
+<div class="footer">
+
+© 2026 PROMPORN SAWANGSRI | LUXURY PORTFOLIO
+
+</div>
+
+<script>
+
+/* Upload Profile */
+
+const uploadProfile =
+document.getElementById("uploadProfile");
+
+const profilePreview =
+document.getElementById("profilePreview");
+
+uploadProfile.addEventListener("change", function(){
+
+    const file = this.files[0];
+
+    if(file){
+
+        const reader = new FileReader();
+
+        reader.onload = function(e){
+
+            profilePreview.src = e.target.result;
+
         }
-    });
+
+        reader.readAsDataURL(file);
+
+    }
+
+});
+
+/* Upload Gallery Images */
+
+const galleryUpload =
+document.getElementById("galleryUpload");
+
+const galleryContainer =
+document.getElementById("galleryContainer");
+
+galleryUpload.addEventListener("change", function(){
+
+    const files = this.files;
+
+    for(let i = 0; i < files.length; i++){
+
+        const file = files[i];
+
+        const reader = new FileReader();
+
+        reader.onload = function(e){
+
+            const img =
+            document.createElement("img");
+
+            img.src = e.target.result;
+
+            img.style.animation =
+            "fadeUp 1s ease";
+
+            galleryContainer.appendChild(img);
+
+        }
+
+        reader.readAsDataURL(file);
+
+    }
+
+});
+
+/* Music */
+
+const music =
+document.getElementById("bgmusic");
+
+function toggleMusic(){
+
+    if(music.paused){
+
+        music.play();
+
+    }else{
+
+        music.pause();
+
+    }
+
+}
+
 </script>
 
 </body>
